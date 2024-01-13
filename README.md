@@ -1,2 +1,2 @@
 # WishList_Repo
- Basic Angular web apploication
+ Basic Angular web application
