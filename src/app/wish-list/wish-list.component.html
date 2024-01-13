@@ -1,0 +1,34 @@
+
+    <div *ngIf="wishes.length==0;else showItems">
+        There are no wishes
+
+    </div>
+
+
+    <ng-template #showItems>
+        <ul class="wish-list">
+            <!--index property of for loop 'item'-->
+            <li *ngFor="let item of wishes;index as ii">
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="checkbox" 
+                        
+                        type="checkbox" 
+                        [checked]="item.isComplete" 
+                        [attr.data-index]="ii"
+                        (click)="toggleItem(item)">
+
+                        <!--Ability to manipulate items.
+                        (click) is event binding
+                        [cheched] is property binding
+                        -->
+                        {{item.wishText}}
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </ng-template>
+
+
+
